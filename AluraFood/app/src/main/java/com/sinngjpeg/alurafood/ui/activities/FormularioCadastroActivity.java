@@ -41,10 +41,12 @@ public class FormularioCadastroActivity extends AppCompatActivity {
     private void addValidateField(final EditText field) {
         field.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
-            public void onFocusChange(View view, boolean b) {
+            public void onFocusChange(View view, boolean hasFocus) {
                 String text = field.getText().toString();
-                if (text.isEmpty()) {
-                    field.setError("Campo Obrigatorio");
+                if (!hasFocus) {
+                    if (text.isEmpty()) {
+                        field.setError("Campo Obrigatorio");
+                    }
                 }
             }
         });
