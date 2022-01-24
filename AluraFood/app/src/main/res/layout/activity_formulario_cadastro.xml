@@ -1,128 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activities.FormularioCadastroActivity">
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="@dimen/dimens_10dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="@dimen/dimens_10dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activities.FormularioCadastroActivity">
 
-    <TextView
-        android:id="@+id/txt_personal_data"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimens_10dp"
-        android:drawablePadding="@dimen/dimens_10dp"
-        android:text="@string/txt_personal_data"
-        android:textSize="@dimen/dimens_24sp"
-        app:drawableStartCompat="@drawable/ic_person_add"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline_left"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edt_full_name"
-        style="@style/Widget.Design.TextInputLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimens_20dp"
-        app:layout_constraintEnd_toEndOf="@id/guideline_right"
-        app:layout_constraintStart_toStartOf="@id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@+id/txt_personal_data">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_left"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/txt_full_name" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/dimens_10dp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edt_cpf"
-        style="@style/Widget.Design.TextInputLayout"
-        android:layout_width="@dimen/dimens_0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimens_8dp"
-        app:layout_constraintEnd_toEndOf="@id/edt_full_name"
-        app:layout_constraintStart_toStartOf="@id/edt_full_name"
-        app:layout_constraintTop_toBottomOf="@+id/edt_full_name">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_right"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/txt_cpf" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/dimens_10dp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edt_phone"
-        style="@style/Widget.Design.TextInputLayout"
-        android:layout_width="@dimen/dimens_0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimens_8dp"
-        app:layout_constraintEnd_toEndOf="@id/edt_cpf"
-        app:layout_constraintStart_toStartOf="@id/edt_cpf"
-        app:layout_constraintTop_toBottomOf="@+id/edt_cpf">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/txt_personal_data"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/telefone_com_ddd" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="@dimen/dimens_10dp"
+            android:drawablePadding="@dimen/dimens_10dp"
+            android:text="@string/txt_personal_data"
+            android:textSize="@dimen/dimens_24sp"
+            app:drawableStartCompat="@drawable/ic_person_add"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edt_email"
-        style="@style/Widget.Design.TextInputLayout"
-        android:layout_width="@dimen/dimens_0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimens_8dp"
-        app:layout_constraintEnd_toEndOf="@id/edt_phone"
-        app:layout_constraintStart_toStartOf="@id/edt_phone"
-        app:layout_constraintTop_toBottomOf="@id/edt_phone">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edt_full_name"
+            style="@style/Widget.Design.TextInputLayout"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/txt_email" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="@dimen/dimens_20dp"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@+id/txt_personal_data">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edt_password"
-        style="@style/Widget.Design.TextInputLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimens_8dp"
-        app:layout_constraintEnd_toEndOf="@id/edt_email"
-        app:layout_constraintStart_toStartOf="@id/edt_email"
-        app:layout_constraintTop_toBottomOf="@+id/edt_email">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/txt_full_name" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edt_cpf"
+            style="@style/Widget.Design.TextInputLayout"
+            android:layout_width="@dimen/dimens_0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/txt_password" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="@dimen/dimens_8dp"
+            app:layout_constraintEnd_toEndOf="@id/edt_full_name"
+            app:layout_constraintStart_toStartOf="@id/edt_full_name"
+            app:layout_constraintTop_toBottomOf="@+id/edt_full_name">
 
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimens_10dp"
-        android:text="@string/txt_register"
-        app:layout_constraintEnd_toEndOf="@id/guideline_right"
-        app:layout_constraintStart_toStartOf="@id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@id/edt_password" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/txt_cpf" />
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edt_phone"
+            style="@style/Widget.Design.TextInputLayout"
+            android:layout_width="@dimen/dimens_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_8dp"
+            app:layout_constraintEnd_toEndOf="@id/edt_cpf"
+            app:layout_constraintStart_toStartOf="@id/edt_cpf"
+            app:layout_constraintTop_toBottomOf="@+id/edt_cpf">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/telefone_com_ddd" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edt_email"
+            style="@style/Widget.Design.TextInputLayout"
+            android:layout_width="@dimen/dimens_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_8dp"
+            app:layout_constraintEnd_toEndOf="@id/edt_phone"
+            app:layout_constraintStart_toStartOf="@id/edt_phone"
+            app:layout_constraintTop_toBottomOf="@id/edt_phone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/txt_email" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edt_password"
+            style="@style/Widget.Design.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_8dp"
+            app:layout_constraintEnd_toEndOf="@id/edt_email"
+            app:layout_constraintStart_toStartOf="@id/edt_email"
+            app:layout_constraintTop_toBottomOf="@+id/edt_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/txt_password" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimens_10dp"
+            android:text="@string/txt_register"
+            app:layout_constraintEnd_toEndOf="@id/guideline_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/edt_password" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
