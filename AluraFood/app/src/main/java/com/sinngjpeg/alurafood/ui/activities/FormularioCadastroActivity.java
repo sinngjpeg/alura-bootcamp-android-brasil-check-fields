@@ -9,6 +9,8 @@ import android.widget.EditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.sinngjpeg.alurafood.R;
 
+import org.w3c.dom.Text;
+
 public class FormularioCadastroActivity extends AppCompatActivity {
 
     @Override
@@ -18,7 +20,7 @@ public class FormularioCadastroActivity extends AppCompatActivity {
 
         TextInputLayout textInputFullName = findViewById(R.id.edt_full_name);
         final EditText fieldFullName = textInputFullName.getEditText();
-        addValidateField(fieldFullName);
+        addValidateField(textInputFullName);
 
         TextInputLayout textInputCpf = findViewById(R.id.edt_cpf);
         final EditText fieldCpf = textInputCpf.getEditText();
@@ -36,6 +38,24 @@ public class FormularioCadastroActivity extends AppCompatActivity {
         final EditText fieldPassword = textInputPassword.getEditText();
         addValidateField(fieldPassword);
 
+    }
+
+    private void addValidateField(final TextInputLayout textInputField) {
+        final EditText field = textInputField.getEditText();
+        field.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                String text = field.getText().toString();
+                if (!hasFocus) {
+                    if (text.isEmpty()) {
+                        textInputField.setError("Campo Obrigatorio");
+                    } else {
+                        textInputField.setError(null);
+                        textInputField.setErrorEnabled(false);
+                    }
+                }
+            }
+        });
     }
 
     private void addValidateField(final EditText field) {
