@@ -45,8 +45,34 @@ public class FormularioCadastroActivity extends AppCompatActivity {
 
     private void configureFieldCPF() {
         TextInputLayout textInputCpf = findViewById(R.id.edt_cpf);
-        addValidateField(textInputCpf);
+
+        EditText fieldCPF = textInputCpf.getEditText();
+        fieldCPF.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                String cpf = fieldCPF.getText().toString();
+                if (!hasFocus) {
+                    if (!validateMandatoryField(cpf, textInputCpf)) return;
+                    if (validateFieldWith11Digits(cpf, textInputCpf)) return;
+                    removeError(textInputCpf);
+                }
+            }
+        });
     }
+
+    private void removeError(TextInputLayout textInputCpf) {
+        textInputCpf.setError(null);
+        textInputCpf.setErrorEnabled(false);
+    }
+
+    private boolean validateFieldWith11Digits(String cpf, TextInputLayout textInputCpf) {
+        if (cpf.length() != 11) {
+            textInputCpf.setError("O CPF precisa ter 11 digitos");
+            return false;
+        }
+        return true;
+    }
+
 
     private void configureFieldFullName() {
         TextInputLayout textInputFullName = findViewById(R.id.edt_full_name);
@@ -60,18 +86,18 @@ public class FormularioCadastroActivity extends AppCompatActivity {
             public void onFocusChange(View view, boolean hasFocus) {
                 String text = field.getText().toString();
                 if (!hasFocus) {
-                    validateMandatoryField(text, textInputField);
+                    if (!validateMandatoryField(text, textInputField)) return;
+                    removeError(textInputField);
                 }
             }
         });
     }
 
-    private void validateMandatoryField(String text, TextInputLayout textInputField) {
+    private boolean validateMandatoryField(String text, TextInputLayout textInputField) {
         if (text.isEmpty()) {
-            textInputField.setError("Campo Obrigatorio");
-        } else {
-            textInputField.setError(null);
-            textInputField.setErrorEnabled(false);
+            textInputField.setError("Campo obrigatorio");
+            return false;
         }
+        return true;
     }
 }
