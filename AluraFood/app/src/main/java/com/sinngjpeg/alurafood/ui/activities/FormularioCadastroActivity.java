@@ -3,12 +3,14 @@ package com.sinngjpeg.alurafood.ui.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.sinngjpeg.alurafood.R;
 
+import br.com.caelum.stella.format.CPFFormatter;
 import br.com.caelum.stella.validation.CPFValidator;
 import br.com.caelum.stella.validation.InvalidStateException;
 
@@ -48,8 +50,8 @@ public class FormularioCadastroActivity extends AppCompatActivity {
 
     private void configureFieldCPF() {
         TextInputLayout textInputCpf = findViewById(R.id.edt_cpf);
-
         EditText fieldCPF = textInputCpf.getEditText();
+        CPFFormatter cpfFormatter = new CPFFormatter();
         fieldCPF.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
@@ -58,7 +60,18 @@ public class FormularioCadastroActivity extends AppCompatActivity {
                     if (!validateMandatoryField(cpf, textInputCpf)) return;
                     if (!validateFieldWith11Digits(cpf, textInputCpf)) return;
                     if (!validateCalculationCPF(cpf, textInputCpf)) return;
+
                     removeError(textInputCpf);
+
+                    String cpfFormatted = cpfFormatter.format(cpf);
+                    fieldCPF.setText(cpfFormatted);
+                } else {
+                    try {
+                        String cpfNotFormatted = cpfFormatter.unformat(cpf);
+                        fieldCPF.setText(cpfNotFormatted);
+                    } catch (IllegalArgumentException e) {
+                        Log.e("erro formatação cpf", e.getMessage());
+                    }
                 }
             }
         });
