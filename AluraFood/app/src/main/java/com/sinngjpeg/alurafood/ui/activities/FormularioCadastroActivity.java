@@ -52,16 +52,15 @@ public class FormularioCadastroActivity extends AppCompatActivity {
         TextInputLayout textInputCpf = findViewById(R.id.edt_cpf);
         EditText fieldCPF = textInputCpf.getEditText();
         CPFFormatter cpfFormatter = new CPFFormatter();
+        validatorFields validator = new validatorFields(textInputCpf);
         fieldCPF.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
                 String cpf = fieldCPF.getText().toString();
                 if (!hasFocus) {
-                    if (!validateMandatoryField(cpf, textInputCpf)) return;
+                    if (!validator.isValid()) return;
                     if (!validateFieldWith11Digits(cpf, textInputCpf)) return;
                     if (!validateCalculationCPF(cpf, textInputCpf)) return;
-
-                    removeError(textInputCpf);
 
                     String cpfFormatted = cpfFormatter.format(cpf);
                     fieldCPF.setText(cpfFormatted);
@@ -88,10 +87,6 @@ public class FormularioCadastroActivity extends AppCompatActivity {
         return true;
     }
 
-    private void removeError(TextInputLayout textInputCpf) {
-        textInputCpf.setError(null);
-        textInputCpf.setErrorEnabled(false);
-    }
 
     private boolean validateFieldWith11Digits(String cpf, TextInputLayout textInputCpf) {
         if (cpf.length() != 11) {
@@ -109,23 +104,16 @@ public class FormularioCadastroActivity extends AppCompatActivity {
 
     private void addValidateField(final TextInputLayout textInputField) {
         final EditText field = textInputField.getEditText();
+        validatorFields validator = new validatorFields(textInputField);
         field.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
-                String text = field.getText().toString();
                 if (!hasFocus) {
-                    if (!validateMandatoryField(text, textInputField)) return;
-                    removeError(textInputField);
+                    if (!validator.isValid()) return;
+
                 }
             }
         });
     }
 
-    private boolean validateMandatoryField(String text, TextInputLayout textInputField) {
-        if (text.isEmpty()) {
-            textInputField.setError("Campo obrigatorio");
-            return false;
-        }
-        return true;
-    }
 }
