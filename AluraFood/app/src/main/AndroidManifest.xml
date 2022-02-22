@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AluraFood">
         <activity
-            android:name=".ui.activities.FormularioCadastroActivity"
+            android:name=".ui.activities.FormRegisterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

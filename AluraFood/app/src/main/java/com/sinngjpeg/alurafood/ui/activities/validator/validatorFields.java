@@ -1,4 +1,4 @@
-package com.sinngjpeg.alurafood.ui.activities;
+package com.sinngjpeg.alurafood.ui.activities.validator;
 
 import android.widget.EditText;
 

@@ -41,7 +41,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edt_full_name"
+            android:id="@+id/edt_full_name_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -51,6 +51,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txt_personal_data">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_full_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/txt_full_name"
@@ -59,16 +60,17 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edt_cpf"
+            android:id="@+id/edt_cpf_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dimens_0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_16dp"
-            app:layout_constraintEnd_toEndOf="@id/edt_full_name"
-            app:layout_constraintStart_toStartOf="@id/edt_full_name"
-            app:layout_constraintTop_toBottomOf="@+id/edt_full_name">
+            app:layout_constraintEnd_toEndOf="@id/edt_full_name_layout"
+            app:layout_constraintStart_toStartOf="@id/edt_full_name_layout"
+            app:layout_constraintTop_toBottomOf="@+id/edt_full_name_layout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_cpf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/txt_cpf"
@@ -77,16 +79,17 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edt_phone"
+            android:id="@+id/edt_phone_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dimens_0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_16dp"
-            app:layout_constraintEnd_toEndOf="@id/edt_cpf"
-            app:layout_constraintStart_toStartOf="@id/edt_cpf"
-            app:layout_constraintTop_toBottomOf="@+id/edt_cpf">
+            app:layout_constraintEnd_toEndOf="@id/edt_cpf_layout"
+            app:layout_constraintStart_toStartOf="@id/edt_cpf_layout"
+            app:layout_constraintTop_toBottomOf="@+id/edt_cpf_layout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/telefone_com_ddd"
@@ -95,16 +98,17 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edt_email"
+            android:id="@+id/edt_email_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dimens_0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_16dp"
-            app:layout_constraintEnd_toEndOf="@id/edt_phone"
-            app:layout_constraintStart_toStartOf="@id/edt_phone"
-            app:layout_constraintTop_toBottomOf="@id/edt_phone">
+            app:layout_constraintEnd_toEndOf="@id/edt_phone_layout"
+            app:layout_constraintStart_toStartOf="@id/edt_phone_layout"
+            app:layout_constraintTop_toBottomOf="@id/edt_phone_layout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/txt_email"
@@ -113,16 +117,17 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edt_password"
+            android:id="@+id/edt_password_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_16dp"
-            app:layout_constraintEnd_toEndOf="@id/edt_email"
-            app:layout_constraintStart_toStartOf="@id/edt_email"
-            app:layout_constraintTop_toBottomOf="@+id/edt_email">
+            app:layout_constraintEnd_toEndOf="@id/edt_email_layout"
+            app:layout_constraintStart_toStartOf="@id/edt_email_layout"
+            app:layout_constraintTop_toBottomOf="@+id/edt_email_layout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/txt_password"
@@ -138,6 +143,6 @@
             android:text="@string/txt_register"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/edt_password" />
+            app:layout_constraintTop_toBottomOf="@id/edt_password_layout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
