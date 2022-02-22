@@ -7,4 +7,5 @@
     <string name="txt_email">E-mail</string>
     <string name="txt_password">Senha</string>
     <string name="txt_register">Cadastrar</string>
+    <string name="full_name_empty">Preencha o campo nome completo</string>
 </resources>
