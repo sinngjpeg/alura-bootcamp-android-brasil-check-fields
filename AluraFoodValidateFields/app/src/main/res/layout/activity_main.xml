@@ -42,7 +42,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edt_full_name"
-            style="@style/Widget.Design.TextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimens_20dp"
@@ -60,10 +60,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edt_cpf"
-            style="@style/Widget.Design.TextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dimens_0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimens_8dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
             app:layout_constraintEnd_toEndOf="@id/edt_full_name"
             app:layout_constraintStart_toStartOf="@id/edt_full_name"
             app:layout_constraintTop_toBottomOf="@+id/edt_full_name">
@@ -78,10 +78,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edt_phone"
-            style="@style/Widget.Design.TextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dimens_0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimens_8dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
             app:layout_constraintEnd_toEndOf="@id/edt_cpf"
             app:layout_constraintStart_toStartOf="@id/edt_cpf"
             app:layout_constraintTop_toBottomOf="@+id/edt_cpf">
@@ -96,10 +96,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edt_email"
-            style="@style/Widget.Design.TextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dimens_0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimens_8dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
             app:layout_constraintEnd_toEndOf="@id/edt_phone"
             app:layout_constraintStart_toStartOf="@id/edt_phone"
             app:layout_constraintTop_toBottomOf="@id/edt_phone">
@@ -114,10 +114,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edt_password"
-            style="@style/Widget.Design.TextInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimens_8dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
             app:layout_constraintEnd_toEndOf="@id/edt_email"
             app:layout_constraintStart_toStartOf="@id/edt_email"
             app:layout_constraintTop_toBottomOf="@+id/edt_email">
