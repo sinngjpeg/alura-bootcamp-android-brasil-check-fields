@@ -8,4 +8,6 @@
     <string name="txt_password">Senha</string>
     <string name="txt_register">Cadastrar</string>
     <string name="full_name_empty">Preencha o campo nome completo</string>
+    <string name="cpf_empty">Preencha o campo CPF</string>
+    <string name="cpf_length">CPF deve ter 11 digitos</string>
 </resources>

@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     private fun configureCPFField() {
         txtCPF = findViewById(R.id.edt_cpf)
         txtCPFLayout = findViewById(R.id.edt_cpf_layout)
+        cpfFocusListener()
     }
 
     private fun configurePhoneNumberField() {
@@ -56,6 +57,30 @@ class MainActivity : AppCompatActivity() {
         configurePhoneNumberField()
         configureEmailField()
         configurePasswordField()
+    }
+
+    private fun cpfFocusListener() {
+        txtCPF.setOnFocusChangeListener { _, focused ->
+            when {
+                !focused -> {
+                    txtCPFLayout.helperText = validateCPF()
+                }
+                else -> txtCPFLayout.isHelperTextEnabled = false
+            }
+        }
+    }
+
+    private fun validateCPF(): String? {
+        val cpfText = txtCPF.text.toString()
+        when {
+            cpfText.isEmpty() -> {
+                return getString(R.string.cpf_empty)
+            }
+            cpfText.length != 11 -> {
+                return getString(R.string.cpf_length)
+            }
+            else -> return null
+        }
     }
 
     fun fullNameFocusListener() {
