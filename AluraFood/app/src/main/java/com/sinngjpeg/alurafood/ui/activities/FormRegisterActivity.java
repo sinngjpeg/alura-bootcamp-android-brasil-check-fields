@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.sinngjpeg.alurafood.R;
+import com.sinngjpeg.alurafood.ui.activities.validator.validatorFields;
 
 import br.com.caelum.stella.format.CPFFormatter;
 import br.com.caelum.stella.validation.CPFValidator;
