@@ -21,12 +21,41 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initializerFields()
+    }
 
-//        initializerFields()
-
+    private fun configureFullNameField() {
         txtFullName = findViewById(R.id.edt_full_name)
         txtFullNameLayout = findViewById(R.id.edt_full_name_layout)
         fullNameFocusListener()
+    }
+
+    private fun configureCPFField() {
+        txtCPF = findViewById(R.id.edt_cpf)
+        txtCPFLayout = findViewById(R.id.edt_cpf_layout)
+    }
+
+    private fun configurePhoneNumberField() {
+        txtPhoneNumber = findViewById(R.id.edt_phone)
+        txtPhoneNumberLayout = findViewById(R.id.edt_phone_layout)
+    }
+
+    private fun configureEmailField() {
+        txtEmail = findViewById(R.id.edt_email)
+        txtEmailLayout = findViewById(R.id.edt_email_layout)
+    }
+
+    private fun configurePasswordField() {
+        txtPassword = findViewById(R.id.edt_password)
+        txtPasswordLayout = findViewById(R.id.edt_password_layout)
+    }
+
+    private fun initializerFields() {
+        configureFullNameField()
+        configureCPFField()
+        configurePhoneNumberField()
+        configureEmailField()
+        configurePasswordField()
     }
 
     fun fullNameFocusListener() {
